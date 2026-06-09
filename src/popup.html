@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DimSim</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>DimSim</h1>
+      </header>
+
+      <form id="settings-form">
+        <label class="toggle-row">
+          <span>Enabled</span>
+          <input id="enabled" type="checkbox" />
+        </label>
+
+        <label>
+          <span>Working day starts</span>
+          <input id="startTime" type="time" step="900" />
+        </label>
+
+        <label>
+          <span>Working day ends</span>
+          <input id="endTime" type="time" step="900" />
+        </label>
+
+        <label>
+          <span>Shade colour</span>
+          <input id="shadeColor" type="color" />
+        </label>
+
+        <label class="toggle-row">
+          <span>Pattern</span>
+          <input id="patternEnabled" type="checkbox" />
+        </label>
+
+        <label>
+          <span>Pattern style</span>
+          <select id="patternStyle">
+            <option value="diagonal">Diagonal</option>
+            <option value="crosshatch">Crosshatch</option>
+            <option value="dots">Dots</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Opacity</span>
+          <input id="opacity" type="range" min="0.05" max="0.6" step="0.01" />
+        </label>
+
+        <p id="status" role="status"></p>
+      </form>
+
+      <footer>
+        <p>
+          Built by
+          <a href="https://github.com/kyeePi" target="_blank" rel="noopener noreferrer"
+            >kyeepi</a
+          >
+        </p>
+        <a
+          class="bmc-button"
+          href="https://buymeacoffee.com/kyeepi"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img src="assets/bmc-logo.svg" alt="" aria-hidden="true" /> Buy me a
+          coffee</a
+        >
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

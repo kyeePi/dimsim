@@ -1,0 +1,20 @@
+{
+  "name": "dimsim",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension that dims non-working hours in Google Calendar.",
+  "author": "Kye Bessant",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyeePi/dimsim.git"
+  },
+  "scripts": {
+    "build": "npm run icons && node scripts/build.js",
+    "check": "node --check src/content.js && node --check src/popup.js && node --check scripts/build.js && node --check scripts/generate-icons.js && node --check scripts/validate-release.js",
+    "icons": "node scripts/generate-icons.js",
+    "release": "npm run check && npm run zip",
+    "validate:release": "node scripts/validate-release.js",
+    "zip": "npm run icons && node scripts/build.js --zip"
+  }
+}

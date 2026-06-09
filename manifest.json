@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "DimSim",
+  "short_name": "DimSim",
+  "version": "0.1.0",
+  "description": "Dim non-working hours in Google Calendar day and week views.",
+  "homepage_url": "https://github.com/kyeePi/dimsim",
+  "icons": {
+    "16": "src/assets/icon-16.png",
+    "32": "src/assets/icon-32.png",
+    "48": "src/assets/icon-48.png",
+    "128": "src/assets/icon-128.png"
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "DimSim",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "src/assets/icon-16.png",
+      "32": "src/assets/icon-32.png",
+      "48": "src/assets/icon-48.png",
+      "128": "src/assets/icon-128.png"
+    }
+  },
+  "options_page": "src/popup.html",
+  "content_scripts": [
+    {
+      "matches": ["https://calendar.google.com/calendar/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
